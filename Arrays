@@ -1,0 +1,21 @@
+#!/bin/bash
+#Kekai Tanaka
+#10/23/2014
+#Using elements in arrays as variables
+
+stuff=("ze ro" one two three four five six)
+
+stuff=("ze ro" one two three four five six [13]="kekai tanaka")
+
+echo "This has and index of 3 in array stuff: ${stuff[3]}"
+
+echo "The array stuff has ${#stuff[*]} elements"
+
+echo "The indices in array stuff are: ${!stuff[*]}"
+
+echo "What follows are the elements of array stuff, one element per line."
+
+for items in "${stuff[@]}"
+do
+ echo "$items"
+done
