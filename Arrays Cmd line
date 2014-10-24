@@ -1,0 +1,32 @@
+#!/bin/bash
+#Kekai Tanaka
+#10/23/2014
+#Using command line arguments as elements in an array.
+
+stuff=("$@")
+if [ $# -lt 1 ]
+then
+  echo "Needs to have at least one command line argument"
+  exit 1
+elif [ ${#stuff[3]} -eq 0 ]
+then
+stuff=("$@" [3]=blank)
+echo "The array stuff has ${#stuff[*]} elements"
+echo "The indices in array stuff are: ${!stuff[*]}"
+echo "The indices in array stuff are: ${!stuff[*]}"
+echo "What follows are the elements of array stuff, one element per line."
+for items in "${stuff[@]}"
+do
+  echo "$items"
+done
+else
+stuff=("$@")
+echo "This has and index of 3 in array stuff: ${stuff[3]}"
+echo "The array stuff has ${#stuff[*]} elements"
+echo "The indices in array stuff are: ${!stuff[*]}"
+echo "What follows are the elements of array stuff, one element per line."
+for items in "${stuff[@]}"
+do
+  echo "$items"
+done
+fi
